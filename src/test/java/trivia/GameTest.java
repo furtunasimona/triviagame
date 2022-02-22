@@ -14,7 +14,7 @@ public class GameTest {
 	@Test
 	public void caracterizationTest() {
 		// runs 10.000 "random" games to see the output of old and new code mathces
-		for (int seed = 1; seed < 10_000; seed++) {
+		for (int seed = 1; seed < 5; seed++) {
 			testSeed(seed, false);
 		}
 	}

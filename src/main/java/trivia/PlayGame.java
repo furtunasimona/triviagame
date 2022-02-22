@@ -18,10 +18,14 @@ public class PlayGame {
 
       IGame aGame = new Game();
 
+      Boolean success;
       for (int i = 1; i <= playerCount; i++) {
-         System.out.print("Player "+i+" name: ");
-         String playerName = scanner.nextLine();
-         aGame.add(playerName);
+         success=false;
+         while(!success) {
+            System.out.print("Player " + i + " name: ");
+            String playerName = scanner.nextLine();
+            success=aGame.add(playerName);
+         }
       }
 
       System.out.println("\n\n--Starting game--");
@@ -54,7 +58,7 @@ public class PlayGame {
    }
 
    private static int readRoll() {
-      System.out.print(">> Throw a die and input roll, or [ENTER] to generate a random roll: ");
+      System.out.print(">> Throw a dice and input roll, or [ENTER] to generate a random roll: ");
       String rollStr = scanner.nextLine().trim();
       if (rollStr.isEmpty()) {
          int roll = new Random().nextInt(6) + 1;
